@@ -1,13 +1,33 @@
 ﻿using System;
-using ConsolePourTest.Entites;
+using GestionPanier.Entites;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ConsolePourTestTests
+namespace GestionPanierTests
 {
 	[TestClass]
 	public class ProduitTest
 	{
-		[TestMethod]
+		[DataTestMethod]
+		[DataRow("0")]
+		[DataRow("-1")]
+		public void ValiderPrix(string rawPrix)
+		{
+			var prix = decimal.Parse(rawPrix);
+			var exception = Assert.ThrowsException<Exception>(() =>
+			{
+				var produit = new Produit
+				{
+					Nom = "Bouteille Bordeaux",
+					Prix = prix
+				};
+
+			});
+
+			Assert.AreEqual("le prix doit être supérieur à 0", exception.Message);
+		}
+
+
+		/*[TestMethod]
 		public void ImpossibleDeMettrePrixInfouEgal0()
 		{
 			var exception=Assert.ThrowsException<Exception>(() =>
@@ -22,12 +42,15 @@ namespace ConsolePourTestTests
 
 			Assert.AreEqual("le prix ne peut pas être négatif", exception.Message);
 
-		}
+		}*/
 
-		[TestMethod]
-		public void ImpossibleDeMettreNomVide()
+		[DataTestMethod]
+		[DataRow("null")]
+		[DataRow("")]
+		[DataRow("      ")]
+		public void ValiderNom(string nomProduit)
 		{
-			Assert.ThrowsException<Exception>(() =>
+			var exception=Assert.ThrowsException<Exception>(() =>
 			{
 				var produit = new Produit
 				{
@@ -38,7 +61,7 @@ namespace ConsolePourTestTests
 				produit.Valider();
 
 			});
-
+			Assert.AreEqual("le nom est requis", exception.Message);
 		}
 	}
 }

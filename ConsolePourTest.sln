@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsolePourTest", "ConsolePourTest\ConsolePourTest.csproj", "{E1CA107B-6833-4EC8-A18A-9D9F22ECF477}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionPanier", "ConsolePourTest\GestionPanier.csproj", "{E1CA107B-6833-4EC8-A18A-9D9F22ECF477}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsolePourTestTests", "ConsolePourTestTests\ConsolePourTestTests.csproj", "{6F3C07DB-F089-4D45-9BAE-4E91EDD7E61D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionPanierTests", "ConsolePourTestTests\GestionPanierTests.csproj", "{6F3C07DB-F089-4D45-9BAE-4E91EDD7E61D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

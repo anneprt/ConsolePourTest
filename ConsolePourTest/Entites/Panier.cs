@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsolePourTest.Entites
+namespace GestionPanier.Entites
 {
 	public class Panier
 	{
@@ -24,7 +24,16 @@ namespace ConsolePourTest.Entites
 				return 0;
 			}
 			var totalLignes = Lignes.Sum(x => x.Produit.Prix * x.Quantite);
+			var fraisPort = totalLignes > 100 ? 0 : 10;
 			return totalLignes + FraisPort;
+		}
+
+		public void Valider()
+		{
+			foreach (var ligne in Lignes)
+			{
+				ligne.Valider();
+			}
 		}
 	}
 }

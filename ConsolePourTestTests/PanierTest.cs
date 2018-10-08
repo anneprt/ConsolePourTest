@@ -1,8 +1,8 @@
 ﻿using System;
-using ConsolePourTest.Entites;
+using GestionPanier.Entites;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ConsolePourTestTests
+namespace GestionPanierTests
 {
 	[TestClass]
 	public class PanierTest
@@ -28,6 +28,13 @@ namespace ConsolePourTestTests
 				Quantite=1
 			});
 			Assert.AreEqual(100, panier.GetTotal());
+		}
+
+		[TestMethod]
+		public void FraisPortOffertsSiSuperieur100()
+		{
+			var panier = new Panier();
+			//panier.Lignes.Add(new )
 		}
 	}
 }

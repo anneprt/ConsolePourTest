@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsolePourTest.Entites
+namespace GestionPanier.Entites
 {
 	public class Produit
 	{
@@ -20,7 +20,7 @@ namespace ConsolePourTest.Entites
 			set
 			{
 				if (value <= 0)
-					throw new Exception("Le prix ne peut pas être négatif");
+					throw new Exception("Prix doit être > 0");
 
 				prix = value;
 
@@ -30,10 +30,10 @@ namespace ConsolePourTest.Entites
 		public void Valider()
 		{
 			if (Prix <= 0)
-				throw new Exception("Le prix ne peut pas être négatif");
+				throw new Exception("Prix doit être > 0");
 
 			if (string.IsNullOrEmpty(Nom))
-				throw new Exception("Le nom est requis");
+				throw new Exception("Nom est requis");
 		}
 	}
 }
