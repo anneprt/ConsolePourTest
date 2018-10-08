@@ -33,7 +33,7 @@ namespace GestionPanierTests
 			};
 
 			var exception = Assert.ThrowsException<Exception>(() => lignePanier.Valider());
-			Assert.AreEqual("le produit est requis", exception.Message);
+			Assert.AreEqual("Produit est requis", exception.Message);
 		}
 	}
 }

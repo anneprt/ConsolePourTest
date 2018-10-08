@@ -23,27 +23,11 @@ namespace GestionPanierTests
 
 			});
 
-			Assert.AreEqual("le prix doit être supérieur à 0", exception.Message);
+			Assert.AreEqual("Prix doit être > 0", exception.Message);
 		}
 
 
-		/*[TestMethod]
-		public void ImpossibleDeMettrePrixInfouEgal0()
-		{
-			var exception=Assert.ThrowsException<Exception>(() =>
-			{
-				var produit = new Produit
-				{
-					Nom = "Bouteille Bordeaux",
-					Prix = 0
-				};
-
-			});
-
-			Assert.AreEqual("le prix ne peut pas être négatif", exception.Message);
-
-		}*/
-
+		
 		[DataTestMethod]
 		[DataRow("null")]
 		[DataRow("")]
@@ -54,14 +38,14 @@ namespace GestionPanierTests
 			{
 				var produit = new Produit
 				{
-					Nom = "",
+					Nom = nomProduit,
 					Prix = 10
 				};
 
 				produit.Valider();
 
 			});
-			Assert.AreEqual("le nom est requis", exception.Message);
+			Assert.AreEqual("Nom est requis", exception.Message);
 		}
 	}
 }

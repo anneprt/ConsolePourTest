@@ -1,4 +1,5 @@
 ﻿using System;
+using GestionPanier;
 using GestionPanier.Entites;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -34,7 +35,16 @@ namespace GestionPanierTests
 		public void FraisPortOffertsSiSuperieur100()
 		{
 			var panier = new Panier();
-			//panier.Lignes.Add(new )
+			panier.Lignes.Add(new LignePanier
+			{
+				Produit = new Produit
+				{
+					Nom = "Tronçonneuse",
+					Prix = 90
+				},
+				Quantite = 2
+			});
+			Assert.AreEqual(180, panier.GetTotal());
 		}
 	}
 }
