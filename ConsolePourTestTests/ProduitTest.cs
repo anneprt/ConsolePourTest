@@ -9,7 +9,7 @@ namespace GestionPanierTests
 	{
 		[DataTestMethod]
 		[DataRow("0")]
-		[DataRow("-1")]
+		[DataRow("-10")]
 		public void ValiderPrix(string rawPrix)
 		{
 			var prix = decimal.Parse(rawPrix);
@@ -29,9 +29,9 @@ namespace GestionPanierTests
 
 		
 		[DataTestMethod]
-		[DataRow("null")]
+		[DataRow(null)]
 		[DataRow("")]
-		[DataRow("      ")]
+		[DataRow(" ")]
 		public void ValiderNom(string nomProduit)
 		{
 			var exception=Assert.ThrowsException<Exception>(() =>

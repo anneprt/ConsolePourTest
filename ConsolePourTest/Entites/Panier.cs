@@ -15,7 +15,7 @@ namespace GestionPanier.Entites
 
 		public List<LignePanier> Lignes { get; set; }
 
-		public decimal FraisPort{ get; set; } = 10;
+		
 
 		public decimal GetTotal()
 		{
@@ -25,7 +25,7 @@ namespace GestionPanier.Entites
 			}
 			var totalLignes = Lignes.Sum(x => x.Produit.Prix * x.Quantite);
 			var fraisPort = totalLignes > 100 ? 0 : 10;
-			return totalLignes + FraisPort;
+			return totalLignes + fraisPort;
 		}
 
 		public void Valider()

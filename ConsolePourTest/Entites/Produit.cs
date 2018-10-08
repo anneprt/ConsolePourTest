@@ -9,6 +9,7 @@ namespace GestionPanier.Entites
 	public class Produit
 	{
 		private decimal prix;
+
 		public int Id { get; set; }
 
 		public string Nom { get; set; }
@@ -32,7 +33,7 @@ namespace GestionPanier.Entites
 			if (Prix <= 0)
 				throw new Exception("Prix doit être > 0");
 
-			if (string.IsNullOrEmpty(Nom))
+			if (string.IsNullOrWhiteSpace(Nom))
 				throw new Exception("Nom est requis");
 		}
 	}

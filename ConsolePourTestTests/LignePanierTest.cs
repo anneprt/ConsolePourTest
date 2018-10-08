@@ -28,7 +28,7 @@ namespace GestionPanierTests
 			var lignePanier = new LignePanier
 			{
 				Produit = null,
-				Quantite = -1
+				Quantite = 1
 
 			};
 
